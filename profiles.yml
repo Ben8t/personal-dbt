@@ -1,0 +1,13 @@
+personal-dbt:
+  target: prod
+  outputs:
+    prod:
+      type: bigquery
+      method: service-account
+      keyfile: "{{ env_var('DBT_GOOGLE_BIGQUERY_KEYFILE_PROD') }}"
+      project: "{{ env_var('DBT_GOOGLE_PROJECT_PROD') }}"
+      dataset: "{{ env_var('DBT_GOOGLE_BIGQUERY_DATASET_PROD') }}"
+      threads: 32
+      timeout_seconds: 300
+      priority: interactive
+      maximum_bytes_billed: 1000000000
