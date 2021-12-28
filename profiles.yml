@@ -1,4 +1,4 @@
-personal-dbt:
+personal_dbt_project:
   target: prod
   outputs:
     prod:
